@@ -28,6 +28,7 @@ public class Main {
 		System.out.println("Média salarial da empresa: " + mediaSalarialEmpresa.getMediaSalatial());
 		System.out.println("Calculadora: " + calculadora.calcular("2+2+4-5"));
 		System.out.println("Fatorial: "+ fatorial.getValorFatorial(3));
+		System.out.println(calculadora.calc());
 	}
 
 }
