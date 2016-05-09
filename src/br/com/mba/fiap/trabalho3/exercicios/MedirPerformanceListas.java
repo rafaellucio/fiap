@@ -1,4 +1,4 @@
-package br.com.fiap.exercicios;
+package br.com.mba.fiap.trabalho3.exercicios;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;

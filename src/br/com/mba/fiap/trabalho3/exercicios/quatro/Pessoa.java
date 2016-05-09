@@ -1,4 +1,4 @@
-package br.com.fiap.exercicios.quatro;
+package br.com.mba.fiap.trabalho3.exercicios.quatro;
 
 import java.util.ArrayList;
 import java.util.Collections;

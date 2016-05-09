@@ -1,4 +1,4 @@
-package br.com.fiap.exercicios;
+package br.com.mba.fiap.trabalho3.exercicios;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

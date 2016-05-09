@@ -1,4 +1,4 @@
-package br.com.fiap.exercicios;
+package br.com.mba.fiap.trabalho3.exercicios;
 
 public class StringEx {
 
