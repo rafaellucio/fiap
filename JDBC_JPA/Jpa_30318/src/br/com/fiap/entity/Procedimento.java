@@ -18,8 +18,8 @@ public class Procedimento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ID", length=11)
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="DESCRICAO", length=45)
@@ -34,10 +34,6 @@ public class Procedimento implements Serializable {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getDescricao() {

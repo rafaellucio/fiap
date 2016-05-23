@@ -20,7 +20,7 @@ public class Paciente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="CPF", unique=true, length=11)
+	@Column(name="CPF", length=11)
 	private String cpf;
 	
 	@Column(name="NOME", length=45)
@@ -32,7 +32,7 @@ public class Paciente implements Serializable {
 	@Column(name="TELEFONE", length=20)
 	private String telefone;
 	
-	@ManyToMany(fetch=FetchType.LAZY, mappedBy="agendaPecientes")
+	@ManyToMany(fetch=FetchType.LAZY, mappedBy="pacientes")
 	private Set<Agenda> agendas = new HashSet<>();
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="paciente")
@@ -40,4 +40,60 @@ public class Paciente implements Serializable {
 	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="paciente")
 	private Set<Matmed> matmeds = new HashSet<>();
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Date getDataNasc() {
+		return dataNasc;
+	}
+
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public Set<Agenda> getAgendas() {
+		return agendas;
+	}
+
+	public void setAgendas(Set<Agenda> agendas) {
+		this.agendas = agendas;
+	}
+
+	public Set<Procedimento> getProcedimentos() {
+		return procedimentos;
+	}
+
+	public void setProcedimentos(Set<Procedimento> procedimentos) {
+		this.procedimentos = procedimentos;
+	}
+
+	public Set<Matmed> getMatmeds() {
+		return matmeds;
+	}
+
+	public void setMatmeds(Set<Matmed> matmeds) {
+		this.matmeds = matmeds;
+	}
 }

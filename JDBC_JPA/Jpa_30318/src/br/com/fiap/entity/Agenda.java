@@ -18,19 +18,15 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="agenda", catalog="dbagendamento_30318", uniqueConstraints={
-		@UniqueConstraint(columnNames="DATA"),
-		@UniqueConstraint(columnNames="HORA")
-})
+@Table(name="agenda", catalog="dbagendamento_30318")
 public class Agenda implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="ID", length=11)
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	@Column(name="ID")
 	private Integer id;
 	
 	@Temporal(value=TemporalType.TIMESTAMP)
@@ -54,14 +50,10 @@ public class Agenda implements Serializable {
 			@JoinColumn(name="PACIENTE_CPF")
 		}
 	)
-	private Set<AgendaPaciente> agendaPecientes = new HashSet<>();
+	private Set<Paciente> pacientes = new HashSet<>();
 
 	public Integer getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public Date getData() {
@@ -88,11 +80,11 @@ public class Agenda implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public Set<AgendaPaciente> getAgendaPecientes() {
-		return agendaPecientes;
+	public Set<Paciente> getPacientes() {
+		return pacientes;
 	}
 
-	public void setAgendaPecientes(Set<AgendaPaciente> agendaPecientes) {
-		this.agendaPecientes = agendaPecientes;
+	public void setPacientes(Set<Paciente> pacientes) {
+		this.pacientes = pacientes;
 	}
 }

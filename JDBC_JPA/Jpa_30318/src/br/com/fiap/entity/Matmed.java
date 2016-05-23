@@ -13,13 +13,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="matmed")
+@Table(name="matmed", catalog="dbagendamento_30318")
 public class Matmed implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ID", length=11)
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@Column(name="DESCRICAO", length=45)
@@ -37,10 +37,6 @@ public class Matmed implements Serializable {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getDescricao() {
